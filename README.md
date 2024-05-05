@@ -1,7 +1,4 @@
 # Curso Angular
-
-[Enlace a los vídeos de las clases](https://grupoodeene.sharepoint.com/:f:/s/Formacion/EihkqwcjFklEntzjCf6w96gBt-YgG0B-5slbw0Lba0YIrA?e=8ddbxF)
-
 <br>
 
 ## Caso práctico
