@@ -1,0 +1,17 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Hello {{ user.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="true" mat-button color="primary">
+        Apply changes
+      </button>
+      <button mat-button color="accent" (click)="onLogOut()">Log out</button>
+      <button mat-button color="warn" (click)="showConfirmation()">
+        Delete Account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <table mat-table [dataSource]="donations" class="container__table">
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef class="container__table--th">
+        <b>User 👤</b>
+      </th>
+      <td mat-cell *matCellDef="let donation" class="container__table--td">
+        {{ donation.user.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="campaign">
+      <th mat-header-cell *matHeaderCellDef class="container__table--th">
+        <b>Campaign 🚩</b>
+      </th>
+      <td mat-cell *matCellDef="let donation" class="container__table--td">
+        {{ donation.campaign.title }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef class="container__table--th">
+        <b>Amount 💵</b>
+      </th>
+      <td mat-cell *matCellDef="let donation" class="container__table--td">
+        {{ donation.amount | currency }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

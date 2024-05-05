@@ -1,0 +1,52 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{ campaign.title }}</mat-card-title>
+    <mat-card-subtitle>{{ campaign.type.value }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <p>{{ campaign.description }}</p>
+    </div>
+
+    <app-entry-template
+      icon="📅"
+      label="Days to expire: "
+      [content]="daysRemaining"
+    ></app-entry-template>
+    <app-entry-template
+      icon="💵"
+      label="Aim"
+      [content]="campaign.financialAim | currency"
+    ></app-entry-template>
+    <app-entry-template
+      icon="💵"
+      label="Raised by now "
+      content=""
+    ></app-entry-template>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="calculatePercentaje()"
+    ></mat-progress-bar>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-card-actions class="card__actions">
+      <ng-container
+        *ngIf="currentUser.id !== campaign.user.id; else myCampaigns"
+      >
+        <a [routerLink]="[detailCampaignRoute, campaign.id]">See more</a>
+      </ng-container>
+      <ng-template #myCampaigns>
+        <button
+          mat-button
+          color="primary"
+          [routerLink]="[editCampaingRoute, campaign.id]"
+        >
+          Edit
+        </button>
+        <button mat-button color="accent" (click)="onDeleteCampaign()">
+          Delete
+        </button>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>

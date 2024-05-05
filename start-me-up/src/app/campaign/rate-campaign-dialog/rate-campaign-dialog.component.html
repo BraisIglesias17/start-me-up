@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Join {{ campaign.title }}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Your rate</mat-label>
+    <input
+      matInput
+      placeholder="1.00"
+      value="0"
+      type="number"
+      [(ngModel)]="rate"
+    />
+  </mat-form-field>
+
+  <p>The average rating is {{ updateAverage() }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onJoin()">Rate</button>
+  <button mat-button (click)="OnCancel()" cdkFocusInitial>Cancel</button>
+</div>

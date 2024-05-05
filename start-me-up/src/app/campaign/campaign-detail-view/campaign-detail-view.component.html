@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-card
+    *ngIf="currentCampaign$ | async as campaign"
+    class="container__card"
+  >
+    <ng-container *ngIf="campaign; else notFound">
+      <mat-card-header>
+        <mat-card-title>{{ campaign.title }}</mat-card-title>
+        <mat-card-subtitle>{{ campaign.type.value }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ campaign.description }}</p>
+        <!-- Refactorizar en componentes-->
+        <app-entry-template
+          icon="📅"
+          label="Start date"
+          [content]="campaign.startDate | date : 'dd-MM-yy'"
+        ></app-entry-template>
+        <app-entry-template
+          icon="📆"
+          label="End date"
+          [content]="campaign.endDate | date : 'dd-MM-yy'"
+        ></app-entry-template>
+        <app-entry-template
+          icon="💵"
+          label="Financial aim"
+          [content]="campaign.financialAim | currency"
+        ></app-entry-template>
+        <app-entry-template
+          icon="💲"
+          label="Total raised by now"
+          [content]="campaign.totalRaised | currency"
+        ></app-entry-template>
+        <app-entry-template
+          icon="🖊 "
+          label="Rating"
+          [content]="campaign.punctuation"
+        ></app-entry-template>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="onParticipate()">
+          Participate
+        </button>
+        <button mat-button color="accent" (click)="onPunctuate()">Rate</button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-card-subtitle
+          >Published by {{ campaign.user.name }}</mat-card-subtitle
+        >
+      </mat-card-footer>
+    </ng-container>
+    <ng-template #notFound> NOT FOUND </ng-template>
+  </mat-card>
+</div>

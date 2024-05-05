@@ -1,0 +1,7 @@
+<app-register-form (register)="onRegister($event)"></app-register-form>
+<!-- extraer error div a un componente-->
+<div *ngIf="showError" class="container">
+  <div class="container__error">
+    <span>{{ errorMessage }}</span>
+  </div>
+</div>

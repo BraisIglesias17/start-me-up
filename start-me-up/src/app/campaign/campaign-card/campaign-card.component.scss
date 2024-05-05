@@ -1,0 +1,13 @@
+.card{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 7px 1px rgba(28,110,164,0.59);
+
+    &__actions{
+        text-align: center;
+    }
+}
+

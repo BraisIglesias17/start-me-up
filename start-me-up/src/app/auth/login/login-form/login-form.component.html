@@ -1,0 +1,38 @@
+<div class="login">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" class="login__form">
+        <mat-form-field class="login__field">
+          <app-label-input
+            [content]="'Email'"
+            [showError]="showError('email')"
+            [errorMessage]="getErrorMessage('email')"
+          ></app-label-input>
+          <input matInput type="text" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field class="login__field">
+          <app-label-input
+            content="Password"
+            [showError]="showError('password')"
+            [errorMessage]="getErrorMessage('password')"
+          ></app-label-input>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-button
+        color="primary"
+        [disabled]="getDisableLogin()"
+        (click)="onLogin()"
+      >
+        Log in
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "email": "brais@gmail.com",
+      "password": "$2a$10$m6hwfZNe7LwwozwbMQkdUOuKSAMdh7KLh6poYbY0gzuj3mZRMpIkO",
+      "id": "5",
+      "name": "brais",
+      "surname": "iglesias"
+    },
+    {
+      "email": "l@gmail.com",
+      "password": "$2a$10$N8QG12gFGwQfYTXQ5DY8ueTEaMokNxI8cYhwMk251VdmxQXUPAduK",
+      "id": "6",
+      "name": "brais",
+      "surname": "iglesias"
+    },
+    {
+      "email": "br@gmail.com",
+      "password": "$2a$10$V8Ie1xruHz81WNrHHDdhXOxW.Wo5/69yaaFonNaxpfwAXFp7tI6pq",
+      "id": "3",
+      "name": "brais",
+      "surname": "iglesias otero"
+    }
+  ],
+  "campaings": [
+    {
+      "id": 1,
+      "title": "campaing",
+      "description": "campaing description",
+      "type": {
+        "id": 0,
+        "value": "donation"
+      },
+      "image": "",
+      "financialAim": 10000,
+      "startDate": "Wed Nov 29 2023 16:29:06 GMT+0100 (hora estándar de Europa central)",
+      "endDate": "Tue Dec 26 2023 16:29:06 GMT+0100 (hora estándar de Europa central)",
+      "totalRaised": 7000,
+      "punctuation": 0,
+      "category":{
+        "id": 1,
+        "name": "science",
+        "description": "software description",
+        "image": "/path/to/image"
+      },
+      "user":{
+        "email": "l@gmail.com",
+        "password": "$2a$10$N8QG12gFGwQfYTXQ5DY8ueTEaMokNxI8cYhwMk251VdmxQXUPAduK",
+        "id": "6",
+        "name": "brais",
+        "surname": "iglesias"
+      }
+    },{
+      "id": 2,
+      "title": "Save walter",
+      "description": "Raise money to save walter white",
+      "type": {
+        "id": 0,
+        "value": "donation"
+      },
+      "image": "/path/to/image",
+      "financialAim": 10000,
+      "startDate": "Wed Nov 29 2023 16:29:06 GMT+0100 (hora estándar de Europa central)",
+      "endDate": "Wed Nov 29 2024 16:29:06 GMT+0100 (hora estándar de Europa central)",
+      "totalRaised": 5000,
+      "punctuation": 0,
+      "category":{
+        "id": 1,
+        "name": "science",
+        "description": "software description",
+        "image": ""
+      },
+      "user":{
+        "email": "brais@gmail.com",
+        "password": "$2a$10$m6hwfZNe7LwwozwbMQkdUOuKSAMdh7KLh6poYbY0gzuj3mZRMpIkO",
+        "id": "5",
+        "name": "brais",
+        "surname": "iglesias"
+      }
+    }
+  ],
+
+  "donations":[
+    {
+      "id":0,
+      "campaign":{
+        "id": 1,
+        "title": "campaing",
+        "description": "campaing description",
+        "type": {
+          "id": 0,
+          "value": "donation"
+        },
+        "image": "",
+        "financialAim": 10000,
+        "startDate": "Wed Nov 29 2023 16:29:06 GMT+0100 (hora estándar de Europa central)",
+        "endDate": "Tue Dec 26 2023 16:29:06 GMT+0100 (hora estándar de Europa central)",
+        "totalRaised": 7000,
+        "punctuation": 0,
+        "category":{
+          "id": 1,
+          "name": "science",
+          "description": "software description",
+          "image": "/path/to/image"
+        },
+        "user":{
+          "email": "l@gmail.com",
+          "password": "$2a$10$N8QG12gFGwQfYTXQ5DY8ueTEaMokNxI8cYhwMk251VdmxQXUPAduK",
+          "id": "6",
+          "name": "brais",
+          "surname": "iglesias"
+        }
+      },
+      "user":{
+          "email": "brais@gmail.com",
+          "password": "$2a$10$m6hwfZNe7LwwozwbMQkdUOuKSAMdh7KLh6poYbY0gzuj3mZRMpIkO",
+          "id": "5",
+          "name": "brais",
+          "surname": "iglesias"
+        },
+      "amount":20
+    }
+    
+  ],
+  "type": [
+    {
+      "id": 0,
+      "value": "donation"
+    },
+    {
+      "id": 1,
+      "value": "reward"
+    },
+    {
+      "id": 2,
+      "value": "investment"
+    },
+    {
+      "id": 3,
+      "value": "loan"
+    }
+  ],
+  "category": [
+    {
+      "id": 0,
+      "name": "music",
+      "description": "software description",
+      "image": ""
+    },
+    {
+      "id": 1,
+      "name": "science",
+      "description": "software description",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "tech",
+      "description": "software description",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "software",
+      "description": "software description",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "sports",
+      "description": "software description",
+      "image": ""
+    }
+  ],
+  "reward": [
+    {
+      "id": 0,
+      "description": "",
+      "requiredLevel": "",
+      "amount": "",
+      "depositDate": "2/12/12"
+    }
+  ]
+}

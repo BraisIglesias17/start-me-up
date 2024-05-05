@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="container__actions">
+    <input
+      matInput
+      type="text"
+      placeholder="Search for name"
+      [(ngModel)]="campaignTitle"
+      class="container__actions__input"
+    />
+
+    <mat-select
+      placeholder="type"
+      [(ngModel)]="campaignType"
+      class="container__actions__select"
+    >
+      <mat-option [value]="emptyType"> None </mat-option>
+      <mat-option *ngFor="let type of types" [value]="type">
+        {{ type.value }}
+      </mat-option>
+    </mat-select>
+
+    <button mat-button color="primary" (click)="onFilter()">
+      Apply filters
+    </button>
+
+    <button mat-button color="sort" (click)="onFilter()">⬆ Sort by aim</button>
+  </div>
+  <mat-grid-list cols="4" rowHeight="350">
+    <mat-grid-tile *ngFor="let campaign of campaigns">
+      <app-campaign-card
+        [campaign]="campaign"
+        [daysRemaining]="daysRemaining"
+        [currentUser]="currentUser"
+        (deleteCampaign)="onDelete($event)"
+      ></app-campaign-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

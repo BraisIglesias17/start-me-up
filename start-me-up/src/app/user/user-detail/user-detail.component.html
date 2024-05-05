@@ -1,0 +1,10 @@
+
+
+<div *ngIf="user$ | async as session">
+    <div *ngIf="session.accessToken!==''">
+        <app-user-detail-form [user]="session.user" (delete)="onDelete($event)" (logOut)="onLogOut($event)"></app-user-detail-form>
+    </div>
+    <div *ngIf="session.accessToken===''">
+        Not allowed
+    </div>
+</div>

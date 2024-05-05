@@ -1,0 +1,13 @@
+.spacer{
+    flex: 1 1 auto;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    font-size: small;
+
+    &_a{
+        text-decoration: none;
+        background-color: aliceblue;
+    }
+}

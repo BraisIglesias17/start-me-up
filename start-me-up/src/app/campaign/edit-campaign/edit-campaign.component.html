@@ -1,0 +1,12 @@
+<ng-container *ngIf="data$ | async as data">
+  <ng-container *ngIf="data.campaign">
+    <app-edit-campaign-form
+      [types]="data.types"
+      [categories]="data.categories"
+      [campaign]="data.campaign"
+      [selectedCategory]="data.category"
+      [selectedType]="data.type"
+      (editCampaign)="onEditCampaign($event)"
+    ></app-edit-campaign-form>
+  </ng-container>
+</ng-container>

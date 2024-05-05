@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Join {{ campaign.title }}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Donation</mat-label>
+    <input
+      matInput
+      placeholder="1.00"
+      value="0"
+      type="number"
+      [(ngModel)]="donation"
+    />
+  </mat-form-field>
+  <p>The current recaudaion is {{ updateTotalRaise() | currency }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onJoin()" [disabled]="donation === 0">
+    Join
+  </button>
+  <button mat-button (click)="OnCancel()" cdkFocusInitial>Cancel</button>
+</div>

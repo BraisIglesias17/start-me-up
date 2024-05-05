@@ -1,0 +1,8 @@
+<ng-container *ngIf="data$ | async as data">
+  <app-new-campaign-form
+    [types]="data.types"
+    [categories]="data.categories"
+    [user]="data.user"
+    (createCampaign)="onCreateCampaign($event)"
+  ></app-new-campaign-form>
+</ng-container>

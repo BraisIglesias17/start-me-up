@@ -1,0 +1,25 @@
+<mat-toolbar color="secondary">
+  <span>{{ appTitle }}</span>
+  <button mat-button [routerLink]="listCampaingsRoute">Campaings</button>
+  <ng-container *ngIf="currentUser$ | async as session">
+    <ng-container *ngIf="session.accessToken !== ''">
+      <button mat-button [routerLink]="ownCampaignsRoute">My campaigns</button>
+    </ng-container>
+  </ng-container>
+
+  <span class="spacer"></span>
+
+  <div *ngIf="currentUser$ | async as session" class="user-info">
+    <ng-container *ngIf="session.accessToken === ''; else logged">
+      <button mat-button [routerLink]="loginRoute">Log in</button>
+      <button mat-button [routerLink]="registerRoute">Register</button>
+    </ng-container>
+
+    <ng-template #logged>
+      <a [routerLink]="['users', session.user.id]" class="user-info_a">
+        <mat-icon>persona</mat-icon>
+      </a>
+      <span>{{ session.user.email }}</span>
+    </ng-template>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+
+    &__table{
+        padding: 15px;
+
+        &--th{
+            padding: 20px;
+            font-size: large;
+        }
+        &--td{
+            text-align: center;
+        }
+    }
+}
+

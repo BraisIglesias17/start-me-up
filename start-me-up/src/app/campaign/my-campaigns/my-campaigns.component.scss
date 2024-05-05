@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header{
+        margin: 30px;
+        font-weight: bold;
+        text-align: center;
+        
+    }
+    &__button{
+        width: 20rem;
+    }
+}

@@ -1,0 +1,25 @@
+<ng-container *ngIf="campaigns$ | async as campaigns">
+  <ng-container *ngIf="campaigns; else notFoundCampaigns">
+    <ng-container *ngIf="types$ | async as types">
+      <div class="container">
+        <h1 class="container__header">My campaigns</h1>
+        <button
+          mat-button
+          color="primary"
+          class="container__button"
+          routerLink="{{ createCampaignRoute }}"
+        >
+          Create campaign
+        </button>
+      </div>
+      <app-list-campaign
+        [campaigns]="campaigns"
+        [types]="types"
+        [currentUser]="currentUser"
+        (deleteCampaign)="onDeleteCampaign($event)"
+      ></app-list-campaign>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #notFoundCampaigns> Not found any campaigns owned </ng-template>
+</ng-container>

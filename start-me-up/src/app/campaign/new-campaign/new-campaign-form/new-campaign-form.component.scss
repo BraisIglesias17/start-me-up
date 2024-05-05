@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+    &__card{
+        box-shadow: 2px 2px 7px 1px #1C6EA4;
+        border-radius: 5px;
+
+        &__field{
+            margin: 7px;
+
+            &--description{
+                width: 80%;
+            }
+        }
+
+    }
+
+}

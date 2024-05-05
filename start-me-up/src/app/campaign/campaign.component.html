@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="container__header">Current campaigns</h1>
+  <ng-container *ngIf="campaigns$ | async as campaigns">
+    <ng-container *ngIf="types$ | async as types">
+      <app-list-campaign
+        [campaigns]="campaigns"
+        [types]="types"
+      ></app-list-campaign>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="donations$ | async as donations">
+    <h1 class="container__header">Donations</h1>
+    <app-list-donations [donations]="donations"></app-list-donations>
+  </ng-container>
+</div>
